@@ -1,0 +1,64 @@
+Sprite "PACGA0", 109, 94
+{
+	XScale 0.800
+	YScale 0.900
+	Offset -63, -62
+	Sprite "PACGA0", 0, 0
+}
+
+Sprite "PACGB0", 109, 94
+{
+	XScale 0.800
+	YScale 0.900
+	Offset -63, -63
+	Sprite "PACGB0", 0, 0
+}
+
+Sprite "PACFA0", 109, 94
+{
+	XScale 0.800
+	YScale 0.900
+	Offset -63, -63
+	Sprite "PACFA0", 0, 0
+}
+
+graphic PCMGNORM,18,15{
+	offset 5,11
+	xscale 1.3
+	yscale 1.3
+	sprite PCMGB0,0,0{}
+}
+graphic PCMGGREY,18,15{
+	offset 5,11
+	xscale 1.3
+	yscale 1.3
+	sprite PCMGG0,0,0
+}
+
+sprite PCMGA0,18,15{
+	offset 9,15
+	xscale 1.3
+	yscale 1.3
+	sprite PCMGA0,0,0{}
+}
+
+sprite PCMGB0,18,15{
+	offset 9,15
+	xscale 1.3
+	yscale 1.3
+	sprite PCMGB0,0,0{}
+}
+
+sprite PACIA0,49,20{
+	offset 24,20
+	xscale 0.7
+	yscale 1.1
+	sprite PACIA0,0,0{}
+}
+
+sprite PACIB0,49,18{
+	offset 24,18
+	xscale 0.7
+	yscale 1.1
+	sprite PACIB0,0,0{}
+}

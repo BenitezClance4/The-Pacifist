@@ -1,0 +1,11 @@
+OptionMenu "HDPacifistMenu"
+{
+	Title "Pacifier LMG Options"
+
+	Option "Plutonia Mode", "hdpc_plutoniamode", "OnOff"
+}
+
+AddOptionMenu "OptionsMenu"
+{
+	Submenu "Pacifist", "HDPacifistMenu"
+}

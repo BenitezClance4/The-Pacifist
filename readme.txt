@@ -1,0 +1,15 @@
+[THIS MAY BE SUBJECTED TO CHANGE]
+Credits:
+Code:
+Ace - Gungnir - EventHandler for the spawner
+        - Soul Cube - Archer Mode bool CVAR
+People behind PB WP Mohl edition - PB Weapon Pack Mohl Edition - spawner for the gun and the mag
+Matt - HDest itself - codes from the pistol, liberator, vulcanette, SMG and the shotgun
+EOA and id Software - 
+EOA for ripping the HAR sounds, and id Software for the Doom franchise
+
+Sprite:
+TypicalSF - Heavy Cannon sprite for the perspective view
+
+Other:
+the hdest discord community for the complements and feedbacks

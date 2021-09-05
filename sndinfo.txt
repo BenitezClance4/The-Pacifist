@@ -1,0 +1,10 @@
+$random weapons/pacifier1 {dspaci1 dspaci2 dspaci3 dspaci4}
+weapons/pacifier2 dsplupc
+
+$limit weapons/pacifier1 0
+$limit weapons/pacifier2 0
+
+dspaci1 dspaci1
+dspaci2 dspaci2
+dspaci3 dspaci3
+dspaci4 dspaci4
