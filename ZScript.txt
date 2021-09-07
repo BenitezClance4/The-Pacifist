@@ -494,6 +494,22 @@ class BFGPickupPaci:IdleDummy{
 	}
 }
 
+Class AAAAAA : CustomInventory
+{
+Default{
+  -COUNTITEM
+  +INVENTORY.ALWAYSPICKUP
+  Inventory.PickupMessage "";
+  Inventory.PickupSound "";
+}
+  States
+  {
+  Pickup:
+    TNT1 A 0 A_SetBlend ("00 FF 00", 0.4, 64);
+    Stop;
+  }
+}
+
 /*
 class HDPacifistRandom:IdleDummy{
 	states{
