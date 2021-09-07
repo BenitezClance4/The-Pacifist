@@ -234,6 +234,8 @@ class HDPacifist:AutoReloadingThingy{
 						if (hdpc_plutoniamode)
 						{
 							A_PlaySound("weapons/pacifier2",7);
+							A_Pain;
+							A_GiveInventory("AAAAAA",1);
 						}else{
 			A_PlaySound("weapons/pacifier1",7);
 			}
