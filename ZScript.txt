@@ -41,7 +41,7 @@ class HDPacifist:AutoReloadingThingy{
 		//$Sprite "PACIA0"
 
 		scale 0.8;
-		inventory.pickupmessage "You got the Light Machine Gun!";
+		inventory.pickupmessage "You got the Medium Machine Gun!";
 		weapon.selectionorder 40;
 		weapon.slotnumber 6;
 		weapon.kickback 24;
@@ -52,7 +52,7 @@ class HDPacifist:AutoReloadingThingy{
 		obituary "%o has been pacified by %k.";
 		hdweapon.barrelsize 30,3,4;
 		hdweapon.refid "PAC";
-		tag "Pacifist Light Machine Gun";
+		tag "Pacifist Medium Machine Gun";
 	}
 
 	override string,double getpickupsprite(){
