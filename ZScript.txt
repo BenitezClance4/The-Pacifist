@@ -8,8 +8,8 @@ class HD7mMag200:HDMagAmmo{
 
 		hdmagammo.maxperunit 200;
 		hdmagammo.roundtype "SevenMilAmmo";
-		hdmagammo.roundbulk (70*0.5)/30.;
-		hdmagammo.magbulk 70;
+		hdmagammo.roundbulk (50*0.5)/30.;
+		hdmagammo.magbulk 50;
 		hdpickup.refid "7mg";
 		tag "7.76mm box magazine";
 		inventory.pickupmessage "Picked up a 7.76mm box magazine.";
@@ -69,8 +69,8 @@ class HDPacifist:AutoReloadingThingy{
 	}
 	override double weaponbulk(){
 		int mg=weaponstatus[PACS_MAG];
-		if(mg<0)return 175;
-		else return (175+2)+mg*2;
+		if(mg<0)return 120;
+		else return (120+2)+mg;
 	}
 
 	override void DrawHUDStuff(HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl){
