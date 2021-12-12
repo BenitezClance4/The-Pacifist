@@ -89,10 +89,13 @@ class HDPacifist:AutoReloadingThingy{
 			sb.drawnum(hpl.countinv("HD7mMag200"),-43,-8,sb.DI_SCREEN_CENTER_BOTTOM,font.CR_BLACK);
 		}
 		string llba="RBRSA3A7";
-		if(hdw.weaponstatus[0]&PACF_FULLAUTO)llba="STFULAUT";
-		sb.drawimage(
-			llba,(-22,-10),
-			sb.DI_SCREEN_CENTER_BOTTOM|sb.DI_TRANSLATABLE|sb.DI_ITEM_RIGHT
+
+sb.drawwepnum(hdw.weaponstatus[1]%100,50,posy:-10);
+		bool PACF_FULLAUTO=!(hdw.weaponstatus[0]&PACF_FULLAUTO);
+		sb.drawstring(
+			sb.pnewsmallfont,PACF_FULLAUTO?"S":"F",(-30,-30),
+			sb.DI_TEXT_ALIGN_RIGHT|sb.DI_TRANSLATABLE|sb.DI_SCREEN_CENTER_BOTTOM,
+			PACF_FULLAUTO?Font.CR_DARKRED:Font.CR_GREEN
 		);
 
 		int lod=max(hdw.weaponstatus[PACS_MAG],0);
@@ -110,21 +113,21 @@ class HDPacifist:AutoReloadingThingy{
 		HDStatusBar sb,HDWeapon hdw,HDPlayerPawn hpl,
 		bool sightbob,vector2 bob,double fov,bool scopeview,actor hpc,string whichdot
 	){
-		int cx,cy,cw,ch;
-		[cx,cy,cw,ch]=screen.GetClipRect();
-		sb.SetClipRect(
-			-16+bob.x,-4+bob.y,32,16,
-			sb.DI_SCREEN_CENTER
-		);
-		vector2 bobb=bob*3;
-		bobb.y=clamp(bobb.y,-8,8);
-		sb.drawimage(
-			"frntsite",(0,0)+bobb,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP,
-			alpha:0.9
-		);
+			int cx,cy,cw,ch;
+			[cx,cy,cw,ch]=screen.GetClipRect();
+			sb.SetClipRect(
+				-24+bob.x,-16+bob.y,40,32,
+				sb.DI_SCREEN_CENTER
+			);
+			vector2 bobb=bob*3;
+			bobb.y=clamp(bobb.y,-8,8);
+			sb.drawimage(
+				"pacfs",(0,-9)+bobb,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP,
+				alpha:0.8
+			);
 		sb.SetClipRect(cx,cy,cw,ch);
 		sb.drawimage(
-			"backsite",(0,0)+bob,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP
+			"pacbs",(0,0)+bob,sb.DI_SCREEN_CENTER|sb.DI_ITEM_TOP
 		);
 	}
 
@@ -151,21 +154,25 @@ class HDPacifist:AutoReloadingThingy{
 		if(invoker.weaponstatus[PACS_CHAMBER]==1){
 
 				double cosp=cos(pitch);
-				[cosp,brsss]=A_SpawnItemEx("HDSpent7mm",
-					cosp*6,0,height-8-sin(pitch)*6,
-					cosp*2,-1,2-sin(pitch),
-					0,SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH
+				[cosp,brsss]=A_SpawnItemEx(
+					"HDSpent7mm",cos(pitch)*8,1,height-7-sin(pitch)*8,
+					cos(pitch)*cos(angle-80)*6+vel.x,
+					cos(pitch)*sin(angle-80)*6+vel.y,
+					-sin(pitch)*6+vel.z,
+					0,SXF_ABSOLUTEMOMENTUM|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH
 				);
 				brsss.vel+=vel;
 				brsss.A_PlaySound(brsss.bouncesound,CHAN_BODY,0.4);
 		}else if(invoker.weaponstatus[LIBS_CHAMBER]==2){
 			double fc=max(pitch*0.01,5);
 			double cosp=cos(pitch);
-			[cosp,brsss]=A_SpawnItemEx("HDLoose7mm",
-				cosp*12,0,height-8-sin(pitch)*12,
-				cosp*fc,0.2*randompick(-1,1),-sin(pitch)*fc,
-				0,SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH
-			);
+			[cosp,brsss]=A_SpawnItemEx(
+					"HDLoose7mm",cos(pitch)*8,1,height-7-sin(pitch)*8,
+					cos(pitch)*cos(angle-80)*6+vel.x,
+					cos(pitch)*sin(angle-80)*6+vel.y,
+					-sin(pitch)*6+vel.z,
+					0,SXF_ABSOLUTEMOMENTUM|SXF_NOCHECKPOSITION|SXF_TRANSFERPITCH
+				);
 			brsss.vel+=vel;
 			brsss.A_PlaySound(brsss.bouncesound,CHAN_BODY,0.4);
 		}
