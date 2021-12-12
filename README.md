@@ -22,4 +22,4 @@ of making a share from the sales and the gun having the nickname
 magazine being excruciatingly heavy, and lacking a scope to deal
 with distant targets.
 
-~~disclaimer: currently, the reloader inside the pacifist still loads up to 7 rounds, unfortunately.~~
+~~disclaimer: currently, the reloader inside the pacifist still loads up to 7 rounds and still reloads slowly, unfortunately.~~
