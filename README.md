@@ -21,3 +21,5 @@ of making a share from the sales and the gun having the nickname
 "The Pacifist". Its current problems are that the gun and the
 magazine being excruciatingly heavy, and lacking a scope to deal
 with distant targets.
+
+~~disclaimer: currently, the reloader inside the pacifist still loads up to 7 rounds, unfortunately.~~
